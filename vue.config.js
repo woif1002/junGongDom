@@ -21,11 +21,13 @@ module.exports = {
     lintOnSave: true,
     // 生产环境是否生成 sourceMap 文件
     productionSourceMap: false,
+    devServer: {
+        proxy: buildConfig.proxy
+    },
     // css相关配置
     css: {
         sourceMap: true,
     },
-    publicPath: process.env.NODE_ENV === 'production' ? `${pageProdName==''?'dist':pageProdName}` : '',
     configureWebpack: {
         output: {
             sourcePrefix: ' '
@@ -34,6 +36,7 @@ module.exports = {
             toUrlUndefined: true
         },
         resolve: {
+            extensions: ['.js', '.vue', '.json'],
             alias: {
                 'vue$': 'vue/dist/vue.esm.js',
                 '@': path.resolve('src'),
@@ -46,12 +49,12 @@ module.exports = {
             new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }]),
             new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty/Workers'), to: 'ThirdParty/Workers' }]),
             new webpack.DefinePlugin({
-                CESIUM_BASE_URL: JSON.stringify('./')
+                CESIUM_BASE_URL: JSON.stringify('/')
             })
         ],
         module: {
-            unknownContextCritical: /^.\/.*$/,
             unknownContextCritical: false
         }
-    }
+    },
+    publicPath: process.env.NODE_ENV === 'production' ? `${pageProdName==''?'dist':pageProdName}` : ''
 };

@@ -13,6 +13,30 @@ const router = new Router({
             meta: {
                 title: '首页'
             }
+        }, {
+            path: '/home',
+            name: 'home',
+            component: () =>
+                import ('@/pages/home/index.vue'),
+            meta: {
+                title: '主页'
+            }
+        }, {
+            path: '/history',
+            name: 'history',
+            component: () =>
+                import ('@/pages/history/index.vue'),
+            meta: {
+                title: '历史数据'
+            }
+        }, {
+            path: '/head',
+            name: 'head',
+            component: () =>
+                import ('@/pages/head/index.vue'),
+            meta: {
+                title: '头部'
+            }
         }]
     })
     //to 为当前路由
