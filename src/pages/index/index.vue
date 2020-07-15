@@ -53,54 +53,61 @@ export default {
     };
   },
   mounted() {
-    setTimeout(() => {
-      this.init();
-    }, 500);
-    this.mouseMovepoly();
+    this.init();
     this.Cartesian3_to84()
   },
   beforeDestroy() {},
   methods: {
     init() {
       const viewer = new Cesium.Viewer("cesiumContainer", {
+        type:5,
         animation: false, //是否显示动画控件(左下方那个)
-        baseLayerPicker: false, //是否显示图层选择控件
+        baseLayerPicker: true, //是否显示图层选择控件
         geocoder: false, //是否显示地名查找控件
         timeline: false, //是否显示时间线控件
         sceneModePicker: true, //是否显示投影方式控件
         navigationHelpButton: false, //是否显示帮助信息控件
         infoBox: true ,//是否显示点击要素之后显示的信息
         homeButton: false, // 是否显示Home按钮
-        sceneMode: Cesium.SceneMode.SCENE2D, // 初始场景模式 1 2D模式 2 2D循环模式 3 3D模式  Cesium.SceneMode
-        requestRenderMode: false, // 启用请求渲染模式
-        // imageryProvider:new Cesium.WebMapServiceImageryProvider({   
-        //     url : url,         
-        //     layers: 'nurc:Arc_Sample'// Here just give layer name   
-        // })
+        sceneMode: Cesium.SceneMode.SCENE2D, // 初始场景模式 1 2D模式 2 2D循环模式 3 3D模式
+        requestRenderMode: true, // 启用请求渲染模式
         // imageryProvider : Cesium.createTileMapServiceImageryProvider({
         //   url : Cesium.buildModuleUrl('Assets/Textures/NaturalEarthII')
         // }),
-        // baseLayerPicker : false,
-        // geocoder : false,
       });
-      // var layers = viewer.imageryLayers;  
+      var layers = viewer.imageryLayers;
         /**
          * 加载本地离线高德地图
          * gaodeTitle为加载的tomcat下面的相对路径
          * 不能使用  2020/7/9
          */
-      // layers.addImageryProvider(createGaodeTileMapServiceImageryProvider());
-      //   function createGaodeTileMapServiceImageryProvider(){
-      //       var gaodeLayer = new Cesium.createTileMapServiceImageryProvider({  
-      //        url : 'http://localhost:8087/gaodeTitle',
-      //        credit:"gaodeTitle"
-      //       }); 
-      //       return gaodeLayer;
-      //   }
-      /**  六边形*/
+        // layers.addImageryProvider(createGaodeTileMapServiceImageryProvider());
+        //   function createGaodeTileMapServiceImageryProvider(){
+        //       var gaodeLayer = new Cesium.createTileMapServiceImageryProvider({  
+        //        url : 'http://localhost:8087/gaodeTitle',
+        //        credit:"gaodeTitle"
+        //       }); 
+        //       return gaodeLayer;
+        //   }
+      
       var dataSourcePromise = Cesium.CzmlDataSource.load(this.czml);
       viewer.dataSources.add(dataSourcePromise);
       viewer.zoomTo(dataSourcePromise);
+      /**  六边形*/
+      // var layers = viewer.scene.imageryLayers;
+      // layers.addImageryProvider(
+      //   new Cesium.SingleTileImageryProvider({
+      //     url: "/public/Cesium/Assets/Textures/NaturalEarthII/0/0/0.jpg",
+      //     rectangle: Cesium.Rectangle.fromDegrees(-75.0, 28.0, -67.0, 29.75),
+      //   })
+      // );
+
+      /**插入灯光样式与透明度*/
+      var blackMarble = layers.addImageryProvider(
+        new Cesium.IonImageryProvider({ assetId: 3812 })
+      );
+      blackMarble.alpha = 0.5;
+      blackMarble.brightness = 2.0;
     },
       // 笛卡尔转84 经纬坐标
     Cartesian3_to84(array) {

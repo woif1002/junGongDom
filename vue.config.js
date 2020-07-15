@@ -1,11 +1,10 @@
 /** Vue.config.js 配置选项 */
 const buildConfig = require("./build.config.js");
 const pageProdName = buildConfig.buildName;
-
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
 
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 let cesiumSource = './node_modules/cesium/Source'
 let cesiumWorkers = '../Build/Cesium/Workers'
 
@@ -30,9 +29,13 @@ module.exports = {
     },
     configureWebpack: {
         output: {
+            filename: '[name].js',
             sourcePrefix: ' '
         },
         amd: {
+            toUrlUndefined: true
+        },
+        node: {
             toUrlUndefined: true
         },
         resolve: {
@@ -49,7 +52,7 @@ module.exports = {
             new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' }]),
             new CopyWebpackPlugin([{ from: path.join(cesiumSource, 'ThirdParty/Workers'), to: 'ThirdParty/Workers' }]),
             new webpack.DefinePlugin({
-                CESIUM_BASE_URL: JSON.stringify('/')
+                CESIUM_BASE_URL: JSON.stringify('')
             })
         ],
         module: {

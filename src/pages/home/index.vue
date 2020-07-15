@@ -36,6 +36,7 @@ export default {
     };
   },
   mounted() {
+    console.log('--------',bj)
     this.mapClick()
     setTimeout(() => {
         this.init();
