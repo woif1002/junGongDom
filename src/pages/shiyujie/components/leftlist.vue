@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-tabs type="border-card">
-      <!-- table 表格 -->
+      <!-- tabl 表格 -->
       <el-tab-pane label="宽带时频">
         <div class="tab-left-box">
           <div
