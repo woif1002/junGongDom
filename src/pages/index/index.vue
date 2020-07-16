@@ -64,7 +64,7 @@ export default {
     init() {
       const viewer = new Cesium.Viewer("cesiumContainer", {
         animation: false, //是否显示动画控件(左下方那个)
-        baseLayerPicker: false, //是否显示图层选择控件
+        baseLayerPicker: true, //是否显示图层选择控件
         geocoder: false, //是否显示地名查找控件
         timeline: false, //是否显示时间线控件
         sceneModePicker: true, //是否显示投影方式控件
@@ -72,7 +72,7 @@ export default {
         infoBox: true ,//是否显示点击要素之后显示的信息
         homeButton: false, // 是否显示Home按钮
         sceneMode: Cesium.SceneMode.SCENE2D, // 初始场景模式 1 2D模式 2 2D循环模式 3 3D模式  Cesium.SceneMode
-        requestRenderMode: false, // 启用请求渲染模式
+        requestRenderMode: true, // 启用请求渲染模式
         // imageryProvider:new Cesium.WebMapServiceImageryProvider({   
         //     url : url,         
         //     layers: 'nurc:Arc_Sample'// Here just give layer name   

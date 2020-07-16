@@ -37,6 +37,14 @@ const router = new Router({
             meta: {
                 title: '头部'
             }
+        }, {
+            path: '/luming',
+            name: 'luming',
+            component: () =>
+                import ('@/pages/lmProject/luming/index.vue'),
+            meta: {
+                title: '陆明 DOM'
+            }
         }]
     })
     //to 为当前路由
