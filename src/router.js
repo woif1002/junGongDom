@@ -69,9 +69,9 @@ const router = new Router({
                 path: '/zoulinyun',
                 name: 'zoulinyun',
                 component: () =>
-                    import ('@/pages/lmProject/luming/index.vue'),
+                    import ('@/pages/zouLinYunGroup/zoulinyun/index.vue'),
                 meta: {
-                    title: '陆明 DOM'
+                    title: '邹霖昀 DOM'
                 }
             }
         ]
