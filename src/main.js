@@ -16,11 +16,10 @@ import 'echarts/map/js/world.js'
 import 'echarts/map/js/china.js'
 import audio from 'vue-mobile-audio';
 import 'echarts/extension-src/bmap/bmap.js'
-import audioWave from 'audio_wave_plugin';
 
 Vue.prototype.$echarts = echarts;
 Vue.prototype.axios = axios;
-Vue.use(ElementUI).use(audio).use(audioWave)
+Vue.use(ElementUI).use(audio)
 
 Vue.config.productionTip = false
 
