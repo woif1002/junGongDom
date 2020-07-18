@@ -1,5 +1,7 @@
 <template>
   <div>
+    <el-link type="primary" href="./inte" target="_blank">主要链接</el-link>
+    <router-view></router-view>
     <div class="center">
       <el-tabs type="border-card">
         <el-tab-pane label="系统">

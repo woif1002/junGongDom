@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-row :gutter="20">
-            <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="12">
+            <el-col :xs="10" :sm="10" :md="10" :lg="12" :xl="12">
                 <div class="grid-content bg-purple">
                     <ul>
                         <li class="li_list">
@@ -122,7 +122,7 @@
                     <div class="li_bottom">高速数据采集</div>
                 </div>
             </el-col>
-            <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="12">
+            <el-col :xs="10" :sm="10" :md="10" :lg="12" :xl="12">
                 <div class="grid-content bg-purple-light">
                     <ul>
                         <li class="li_list_btn">
@@ -232,7 +232,7 @@
             </el-col>
         </el-row>
         <el-row>
-            <el-col :xs="21" :sm="21" :md="21" :lg="21" :xl="24">
+            <el-col :xs="21" :sm="21" :md="21" :lg="24" :xl="24">
                 <div class="grid-content bg-purple center">
                     <el-table
                             ref="singleTable"
