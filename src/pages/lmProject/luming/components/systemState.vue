@@ -39,32 +39,38 @@
                                <div style="margin: 30px">
                                    <zijian/>
                                </div>
-                                <span slot="footer" class="dialog-footer">
-                                    <el-button type="primary" @click="zijian_btn = false" style="color: white">确 定</el-button>
-                            </span>
+                                <div style="text-align: center">
+                                    <span slot="footer" class="dialog-footer">
+                                        <el-button type="primary" @click="zijian_btn = false" style="color: white">关  闭</el-button>
+                                    </span>
+                                </div>
                             </el-dialog>
                         </li>
                         <li class="li_list">
-                            <el-button type="text" @click="dialogVisible = true">
+                            <el-button type="text" @click="sjian_btn = true">
                                 <div class="li_icon">
                                     <i class="el-icon-s-tools"></i>
                                 </div>
                                 衰减控制参数
                             </el-button>
                             <el-dialog
-                                    title="提示"
-                                    :visible.sync="dialogVisible"
-                                    width="30%"
+                                    title="衰减控制"
+                                    :visible.sync="sjian_btn"
+                                    width="22%"
                                     :before-close="handleClose">
-                                <span>这是一段信息</span>
-                                <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                <span><hr/></span>
+                                <div style="margin: 30px">
+                                    <sjian/>
+                                </div>
+                                <div style="text-align: center">
+                                    <span slot="footer" class="dialog-footer">
+                                    <el-button type="primary" @click="sjian_btn = false">确 定</el-button>
+                                </span>
+                                </div>
                             </el-dialog>
                         </li>
                         <li class="li_list">
-                            <el-button type="text" @click="dialogVisible = true">
+                            <el-button type="text" @click="spkz_btn = true">
                                 <div class="li_icon">
                                     <i class="el-icon-s-tools"></i>
                                 </div>
@@ -72,14 +78,18 @@
                             </el-button>
                             <el-dialog
                                     title="提示"
-                                    :visible.sync="dialogVisible"
+                                    :visible.sync="spkz_btn"
                                     width="30%"
                                     :before-close="handleClose">
-                                <span>这是一段信息</span>
-                                <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                <span><hr/></span>
+                                <div style="margin: 30px">
+                                    <spkc/>
+                                </div>
+                                <div style="text-align: center">
+                                    <span slot="footer" class="dialog-footer">
+                                        <el-button type="primary" @click="spkz_btn = false">确 定</el-button>
+                                    </span>
+                                </div>
                             </el-dialog>
                         </li>
                         <li class="li_list">
@@ -324,9 +334,13 @@
 
 <script>
     import zijian from './SystemStateButton/zijianBtn'
+    import sjian from './SystemStateButton/sjianBtn'
+    import spkc from './SystemStateButton/spkzBtn'
     export default {
         components:{
-            zijian
+            zijian,
+            sjian,
+            spkc
         },
      data() {
          return {
@@ -344,6 +358,8 @@
              },
              dialogVisible: false,
              zijian_btn:false,
+             sjian_btn:false,
+             spkz_btn:false,
              tableData: [{
                  date: '2016-05-02',
                  name: '王小虎',
@@ -414,8 +430,15 @@
  };
 
 </script>
-
 <style scoped>
+    .dialog-footer button{
+        background: red;
+        border: 0;
+        width: 140px
+    }
+    .li_list .el-dialog__wrapper .el-dialog .el-dialog__footer{
+        text-align: center;
+    }
     .el-col {
         border-radius: 4px;
     }
