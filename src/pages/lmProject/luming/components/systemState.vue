@@ -18,9 +18,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list">
@@ -37,9 +37,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list">
@@ -56,9 +56,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list">
@@ -75,9 +75,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list">
@@ -94,9 +94,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list">
@@ -113,9 +113,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                     </ul>
@@ -146,9 +146,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list_right">
@@ -165,9 +165,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list_right">
@@ -184,9 +184,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list_right">
@@ -203,9 +203,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list_right">
@@ -222,9 +222,9 @@
                                     :before-close="handleClose">
                                 <span>这是一段信息</span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button @click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                     </ul>
