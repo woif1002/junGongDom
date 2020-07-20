@@ -33,10 +33,12 @@
                             <el-dialog
                                     title="前端状态自检"
                                     :visible.sync="zijian_btn"
-                                    width="30%"
+                                    width="55%"
                                     :before-close="handleClose">
                                 <span><hr/></span>
-                                <zijian/>
+                               <div style="margin: 30px">
+                                   <zijian/>
+                               </div>
                                 <span slot="footer" class="dialog-footer">
                                     <el-button type="primary" @click="zijian_btn = false" style="color: white">确 定</el-button>
                             </span>
@@ -241,8 +243,9 @@
                             :header-cell-style="styleObj"
                             :row-key="rowStyle"
                             @current-change="handleCurrentChange"
-                            border="true"
-                            style="width: 100%">
+                            :border="true"
+                            style="width: 100%"
+                            :cell-style="cellStyle">
                         <el-table-column
                                 type="index"
                                 width="50">
@@ -333,7 +336,7 @@
              PageSize:8,
              styleObj: {
                  'color':'#fff',
-                 'background-color':'#666'
+                 'background-color':'#999'
              },
              rowStyle:{
                  'color':'#fff',
@@ -402,13 +405,17 @@
                  .catch(_ => {});
          },cc:function (currentPage) {
              this.currentPage=currentPage;
+         },cellStyle({columnIndex}){
+             if (columnIndex == 0){
+                return "background-color:#999;color:#fff"
+            }
          }
      }
  };
 
 </script>
 
-<style>
+<style scoped>
     .el-col {
         border-radius: 4px;
     }
@@ -420,7 +427,7 @@
     }
     .bg-purple-light {
         border: 1px solid #7b7b7b;
-        height: 177px;
+
     }
     .grid-content {
         border-radius: 4px;
@@ -442,6 +449,12 @@
         border: 1px solid white;
         margin: 0 1%;
     }
+    .el-button--text{
+        color: black;
+    }
+    .el-button--text:hover{
+        color: #1799e9;
+    }
     .li_list_btn{
         float: left;
         border: 1px solid white;
@@ -452,7 +465,7 @@
     }
     .li_list_btn .zhu,.wei{
         width: 100px;
-        height: 150px;
+        height: 145px;
         border-radius: 4px;
         border: 0;
         color: white;
@@ -505,7 +518,7 @@
     }
     /*中间样式*/
     .center{
-        margin-top: 20px;
+        margin-top: 15px;
     }
     /*分页样式*/
     .page{
