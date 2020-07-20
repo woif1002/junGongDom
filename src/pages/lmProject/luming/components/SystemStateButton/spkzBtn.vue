@@ -1,6 +1,52 @@
 <template>
     <div>
-        Demo
+        <div class="sjian_h">
+            <div class="top_ft">前端控制</div>
+            <div>
+                <el-select v-model="value_s" placeholder="请选择" size="mini">
+                    <el-option
+                            v-for="item in option_s"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                    </el-option>
+                </el-select>
+            </div>
+        </div>
+        <div class="sjian_h">
+            <div class="top_ft">模式选择</div>
+            <div>
+                <el-select v-model="value_p" placeholder="请选择" size="mini">
+                    <el-option
+                            v-for="item in option_p"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                    </el-option>
+                </el-select>
+            </div>
+        </div>
+        <div class="sjian_h">
+            <div class="top_ft">频率</div>
+            <div class="sj_inp">
+                <el-input v-model="input" size="mini"></el-input>
+            </div>
+            <span>Mhz</span>
+        </div>
+        <div class="sjian_h">
+            <div class="top_ft">脉宽</div>
+            <div class="sj_inp">
+                <el-input v-model="input" size="mini"></el-input>
+            </div>
+            <span>us</span>
+        </div>
+        <div class="sjian_h">
+            <div class="top_ft">周期</div>
+            <div class="sj_inp">
+                <el-input v-model="input" size="mini"></el-input>
+            </div>
+            <span>us</span>
+        </div>
     </div>
 </template>
 
@@ -8,12 +54,61 @@
  export default {
      data(){
          return{
-
+             value_s: '正常',
+             option_s: [{
+                 value: '选项1',
+                 label: '侦查处理模块'
+             }, {
+                 value: '选项2',
+                 label: '侦查处理模块'
+             }, {
+                 value: '选项3',
+                 label: '侦查处理模块'
+             }, {
+                 value: '选项4',
+                 label: '侦查处理模块'
+             }, {
+                 value: '选项5',
+                 label: '侦查处理模块'
+             }],
+             value_p:'连续波',
+             option_p: [{
+                 value: '选项1',
+                 label: '0.38-0.9G'
+             }, {
+                 value: '选项2',
+                 label: '0.38-0.9G'
+             }, {
+                 value: '选项3',
+                 label: '0.38-0.9G'
+             }, {
+                 value: '选项4',
+                 label: '0.38-0.9G'
+             }, {
+                 value: '选项5',
+                 label: '0.38-0.9G'
+             }]
          }
      }
  }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+    .top_ft{
+        width: 130px;
+        height: 27px;
+        line-height: 27px;
+        float: left;
+    }
+    .sjian_h{
+        margin: 25px 0;
+    }
+    .sj_inp{
+        float: left;
+        width: 140px;
+    }
+    .sjian_h>span{
+        clear: left;
+        line-height: 27px;
+    }
 </style>

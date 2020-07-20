@@ -77,7 +77,7 @@
                                 射频前端控制
                             </el-button>
                             <el-dialog
-                                    title="提示"
+                                    title="射频前端控制"
                                     :visible.sync="spkz_btn"
                                     width="30%"
                                     :before-close="handleClose">
