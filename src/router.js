@@ -51,7 +51,7 @@ const router = new Router({
                 path: '/shiyujie',
                 name: 'shiyujie',
                 component: () =>
-                    import ('@/pages/shiyujie/shiyujie.vue'),
+                    import ('@/pages/shiyujie/index.vue'),
                 meta: {
                     title: '师育杰 DOM'
                 }
@@ -73,7 +73,16 @@ const router = new Router({
                 meta: {
                     title: '邹霖昀 DOM'
                 }
-            }
+            }, {
+                path: '/integrated',
+                name: 'integrated',
+                component: () =>
+                    import ('@/pages/integrated/index.vue'),
+                meta: {
+                    title: '一体化宽带'
+                }
+            },
+
         ]
     })
     //to 为当前路由

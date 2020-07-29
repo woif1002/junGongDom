@@ -15,11 +15,16 @@
               height="200"
               :border="true"
               @cell-mouse-enter="hoverClick(index)"
-              @cell-mouse-leave="hover(index)"
+              @cell-mouse-leave="hover"
             >
               <el-table-column label="频率" width="150">
                 <template slot-scope="scope">
-                  <i class="el-icon-time"></i>
+                  <!-- <template slot-scope="scope"> -->
+                    <!-- {{scope.row.url}} -->
+                    <img :src="scope.row.url == 1?'https://pic.rmb.bdstatic.com/46051605ba7d2ec4a5878f3a98d94451.jpeg':''" style="width:10px;height:10px;">
+                  <!-- </template> -->
+                  
+                  <!-- <i class="el-icon-time"></i> -->
                   <span style="margin-left: 10px">{{ scope.row.date }}</span>
                 </template>
               </el-table-column>
@@ -45,9 +50,11 @@
 export default {
   data() {
     return {
+      urlData:require('../assets/images/logo.png'),
       selectIndex: 2,
       tableData: [
         {
+          url:1,
           date: "2016-05-03",
           name: "王小虎",
           province: "上海",
@@ -56,6 +63,7 @@ export default {
           zip: 200333
         },
         {
+          url:2,
           date: "2016-05-02",
           name: "王小虎",
           province: "上海",
@@ -112,11 +120,9 @@ export default {
   },
   methods: {
     hoverClick(index) {
-      console.log("当前 hover 进入 事件" + index);
       this.selectIndex = index;
     },
-    hover(index) {
-      console.log("当前 hover 移除 事件" + index);
+    hover() {
       this.selectIndex = 3;
     },
     /**折线图**/

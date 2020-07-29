@@ -1,7 +1,6 @@
 <template>
   <div>
     <div id="map"></div> 
-    <div> 555 </div>
   </div>
 </template>
 <script>

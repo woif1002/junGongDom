@@ -56,7 +56,8 @@ module.exports = {
             })
         ],
         module: {
-            unknownContextCritical: false
+            unknownContextCritical: false,
+            // unknownContextRegExp: /^.\/.*$/,
         }
     },
     publicPath: process.env.NODE_ENV === 'production' ? `${pageProdName==''?'dist':pageProdName}` : ''
