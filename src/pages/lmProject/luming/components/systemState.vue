@@ -1,13 +1,13 @@
 <template>
     <div>
-        <el-row>
-            <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" :push="1">
+        <el-row :gutter="20">
+            <el-col :xs="10" :sm="10" :md="10" :lg="12" :xl="12">
                 <div class="grid-content bg-purple">
                     <ul>
                         <li class="li_list">
                             <el-button type="text" @click="dialogVisible = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 GPS时间获取
                             </el-button>
@@ -24,85 +24,96 @@
                             </el-dialog>
                         </li>
                         <li class="li_list">
-                            <el-button type="text" @click="dialogVisible = true">
+                            <el-button type="text" @click="zijian_btn = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 前端状态自检
                             </el-button>
                             <el-dialog
-                                    title="提示"
-                                    :visible.sync="dialogVisible"
-                                    width="30%"
+                                    title="前端状态自检"
+                                    :visible.sync="zijian_btn"
+                                    width="55%"
                                     :before-close="handleClose">
-                                <span>这是一段信息</span>
-                                <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                <span><hr/></span>
+                               <div style="margin: 30px">
+                                   <zijian/>
+                               </div>
+                                <div style="text-align: center">
+                                    <span slot="footer" class="dialog-footer">
+                                        <el-button type="primary" @click="zijian_btn = false" style="color: white">关  闭</el-button>
+                                    </span>
+                                </div>
                             </el-dialog>
                         </li>
                         <li class="li_list">
-                            <el-button type="text" @click="dialogVisible = true">
+                            <el-button type="text" @click="sjian_btn = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 衰减控制参数
                             </el-button>
                             <el-dialog
-                                    title="提示"
-                                    :visible.sync="dialogVisible"
-                                    width="30%"
+                                    title="衰减控制"
+                                    :visible.sync="sjian_btn"
+                                    width="22%"
                                     :before-close="handleClose">
-                                <span>这是一段信息</span>
-                                <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                <span><hr/></span>
+                                <div style="margin: 30px">
+                                    <sjian/>
+                                </div>
+                                <div style="text-align: center">
+                                    <span slot="footer" class="dialog-footer">
+                                    <el-button type="primary" @click="sjian_btn = false">确 定</el-button>
+                                </span>
+                                </div>
                             </el-dialog>
                         </li>
                         <li class="li_list">
-                            <el-button type="text" @click="dialogVisible = true">
+                            <el-button type="text" @click="spkz_btn = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 射频前端控制
                             </el-button>
                             <el-dialog
-                                    title="提示"
-                                    :visible.sync="dialogVisible"
+                                    title="射频前端控制"
+                                    :visible.sync="spkz_btn"
                                     width="30%"
                                     :before-close="handleClose">
-                                <span>这是一段信息</span>
-                                <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                <span><hr/></span>
+                                <div style="margin: 30px">
+                                    <spkc/>
+                                </div>
+                                <div style="text-align: center">
+                                    <span slot="footer" class="dialog-footer">
+                                        <el-button type="primary" @click="spkz_btn = false">确 定</el-button>
+                                    </span>
+                                </div>
                             </el-dialog>
                         </li>
                         <li class="li_list">
                             <el-button type="text" @click="dialogVisible = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 采集处理设置
                             </el-button>
                             <el-dialog
-                                    title="提示"
+                                    title="采集处理设置"
                                     :visible.sync="dialogVisible"
                                     width="30%"
                                     :before-close="handleClose">
-                                <span>这是一段信息</span>
+                                <span><hr/></span>
                                 <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+                                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                                </span>
                             </el-dialog>
                         </li>
                         <li class="li_list">
                             <el-button type="text" @click="dialogVisible = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 系统状态查看
                             </el-button>
@@ -121,9 +132,8 @@
                     </ul>
                     <div class="li_bottom">高速数据采集</div>
                 </div>
-
             </el-col>
-            <el-col :xs="10" :sm="10" :md="10" :lg="10" :xl="10" :push="2">
+            <el-col :xs="10" :sm="10" :md="10" :lg="12" :xl="12">
                 <div class="grid-content bg-purple-light">
                     <ul>
                         <li class="li_list_btn">
@@ -135,7 +145,7 @@
                         <li class="li_list_right">
                             <el-button type="text" @click="dialogVisible = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 采集处理索引读取
                             </el-button>
@@ -154,7 +164,7 @@
                         <li class="li_list_right">
                             <el-button type="text" @click="dialogVisible = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 中频数据读取
                             </el-button>
@@ -173,7 +183,7 @@
                         <li class="li_list_right">
                             <el-button type="text" @click="dialogVisible = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 PDW数据存储设
                             </el-button>
@@ -192,7 +202,7 @@
                         <li class="li_list_right">
                             <el-button type="text" @click="dialogVisible = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 PDW数据索引读
                             </el-button>
@@ -211,7 +221,7 @@
                         <li class="li_list_right">
                             <el-button type="text" @click="dialogVisible = true">
                                 <div class="li_icon">
-                                    <i class="el-icon-s-tools" style="font-size: 60px"></i>
+                                    <i class="el-icon-s-tools"></i>
                                 </div>
                                 PDW数据读取
                             </el-button>
@@ -233,17 +243,18 @@
             </el-col>
         </el-row>
         <el-row>
-            <el-col :xs="21" :sm="21" :md="21" :lg="21" :xl="21" :push="1">
+            <el-col :xs="21" :sm="21" :md="21" :lg="24" :xl="24">
                 <div class="grid-content bg-purple center">
                     <el-table
                             ref="singleTable"
-                            :data="tableData"
+                            :data="tableData.slice((currentPage-1)*PageSize,currentPage*PageSize)"
                             highlight-current-row
                             :header-cell-style="styleObj"
                             :row-key="rowStyle"
                             @current-change="handleCurrentChange"
-                            border="true"
-                            style="width: 100%">
+                            :border="true"
+                            style="width: 100%"
+                            :cell-style="cellStyle">
                         <el-table-column
                                 type="index"
                                 width="50">
@@ -307,7 +318,11 @@
                         <el-pagination
                                 background
                                 layout="prev, pager, next"
-                                :total="230">
+                                :page-size="PageSize"
+                                :current-page="currentPage"
+                                :total="this.tableData.length"
+                                @current-change="cc"
+                        >
                         </el-pagination>
                     </div>
                 </div>
@@ -317,18 +332,33 @@
 </template>
 
 <script>
- export default {
+    import zijian from './SystemStateButton/zijianBtn'
+    import sjian from './SystemStateButton/sjianBtn'
+    import spkc from './SystemStateButton/spkzBtn'
+    export default {
+        components:{
+            zijian,
+            sjian,
+            spkc
+        },
      data() {
          return {
+             // 默认显示第几页
+             currentPage:1,
+             // 默认每页显示的条数（可修改）
+             PageSize:8,
              styleObj: {
                  'color':'#fff',
-                 'background-color':'#666'
+                 'background-color':'#999'
              },
              rowStyle:{
                  'color':'#fff',
                  'background-color':'#666'
              },
              dialogVisible: false,
+             zijian_btn:false,
+             sjian_btn:false,
+             spkz_btn:false,
              tableData: [{
                  date: '2016-05-02',
                  name: '王小虎',
@@ -361,6 +391,22 @@
                  date: '2016-05-03',
                  name: '王小虎',
                  address: '上海市普陀区金沙江路 1516 弄'
+             }, {
+                 date: '2016-05-03',
+                 name: '王小虎',
+                 address: '上海市普陀区金沙江路 1516 弄'
+             }, {
+                 date: '2016-05-03',
+                 name: '王小虎',
+                 address: '上海市普陀区金沙江路 1516 弄'
+             }, {
+                 date: '2016-05-03',
+                 name: '王小虎',
+                 address: '上海市普陀区金沙江路 1516 弄'
+             }, {
+                 date: '2016-05-03',
+                 name: '王小虎',
+                 address: '上海市普陀区金沙江路 1516 弄'
              }],
              currentRow: null
          };
@@ -372,13 +418,26 @@
                      done();
                  })
                  .catch(_ => {});
+         },cc:function (currentPage) {
+             this.currentPage=currentPage;
+         },cellStyle({columnIndex}){
+             if (columnIndex == 0){
+                return "background-color:#999;color:#fff"
+            }
          }
      }
  };
 
 </script>
-
-<style>
+<style scoped>
+    .dialog-footer button{
+        background: red;
+        border: 0;
+        width: 140px
+    }
+    .li_list .el-dialog__wrapper .el-dialog .el-dialog__footer{
+        text-align: center;
+    }
     .el-col {
         border-radius: 4px;
     }
@@ -390,6 +449,7 @@
     }
     .bg-purple-light {
         border: 1px solid #7b7b7b;
+
     }
     .grid-content {
         border-radius: 4px;
@@ -399,7 +459,7 @@
     }
     .li_list{
         float: left;
-        margin-left: 4%;
+        margin:0 2%;
         border: 1px solid white;
         padding: 5px;
     }
@@ -409,24 +469,29 @@
     .li_list_right{
         float: left;
         border: 1px solid white;
-        padding: 4px;
-        margin-left: 1%;
+        margin: 0 1%;
+    }
+    .el-button--text{
+        color: black;
+    }
+    .el-button--text:hover{
+        color: #1799e9;
     }
     .li_list_btn{
         float: left;
         border: 1px solid white;
-        padding: 4px;
+        margin-left: 20px;
     }
     .li_list_right span{
         color: black;
     }
     .li_list_btn .zhu,.wei{
-        width: 80px;
-        height: 100px;
+        width: 100px;
+        height: 145px;
         border-radius: 4px;
         border: 0;
         color: white;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: bold;
         margin-left: 5%;
     }
@@ -437,26 +502,32 @@
         background: red;
     }
     .li_icon{
-        width: 60px;
-        height: 60px;
+        width: 90px;
+        height: 90px;
         margin: 0 auto;
         color: black;
+    }
+    .el-icon-s-tools{
+        font-size: 80px;
     }
     .li_list:hover{
         border: 1px solid #1eb2e9;
         border-radius: 4px;
     }
-    .li_list:hover span{
+    .li_list:hover>button span{
         color: #1eb2e9;
     }
     .li_list_right:hover{
         border: 1px solid #1eb2e9;
         border-radius: 4px;
     }
-    .li_list_right:hover span{
+    .li_list_right:hover>button span{
         color: #1eb2e9;
     }
-    .li_icon:hover{
+    .li_list:hover .li_icon{
+        color: #1eb2e9;
+    }
+    .li_list_right:hover .li_icon{
         color: #1eb2e9;
     }
     .li_bottom{
@@ -469,11 +540,18 @@
     }
     /*中间样式*/
     .center{
-        margin-top: 20px;
+        margin-top: 15px;
     }
     /*分页样式*/
     .page{
         float: right;
         margin: 30px 0;
+    }
+    /*按钮内部样式*/
+    .el-dialog__title{
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+
     }
 </style>

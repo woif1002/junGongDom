@@ -66,6 +66,15 @@ const router = new Router({
                 }
             },
             {
+                path: '/inte',
+                name: 'inte',
+                component: () =>
+                    import ('@/pages/lmProject/luming/components/Integration.vue'),
+                meta: {
+                    title: '陆明 DOM1'
+                }
+            },
+            {
                 path: '/zoulinyun',
                 name: 'zoulinyun',
                 component: () =>
